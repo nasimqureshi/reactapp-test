@@ -11,14 +11,15 @@ class Introduction extends Component {
         this.handleInput = this.handleInput.bind(this);
     }
     handleInput= (e) => {
-        const { value } = e;
+        const { value } = e.target;
+        console.log('value:', value)
          this.setState({ userInput: value })
         }
     render(){
         return (
             <div>
             <input value={this.state.userInput} onChange={this.handleInput.bind(this)} />
-                <h1>{this.state.message}</h1>
+                <h1>{this.state.userInput}</h1>
             </div>
         )
     }
